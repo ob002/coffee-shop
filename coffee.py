@@ -1,5 +1,3 @@
-# coffee.py
-
 from order import Order
 
 class Coffee:

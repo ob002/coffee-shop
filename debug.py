@@ -3,25 +3,25 @@ from coffee import Coffee
 from order import Order
 
 # Create customers
-alice = Customer("Alice")
-bob = Customer("Bob")
+arthur = Customer("Arthur")
+willy = Customer("Willy")
 
 # Create coffees
-latte = Coffee("Latte")
-espresso = Coffee("Espresso")
+blackcoffee = Coffee("Black Coffee")
+whitecoffee = Coffee("white Coffee")
 
 # Create orders
-alice.create_order(latte, 5.5)
-alice.create_order(latte, 6.0)
-bob.create_order(latte, 5.0)
-bob.create_order(espresso, 4.0)
+arthur.create_order(blackcoffee, 5.5)
+arthur.create_order(blackcoffee, 6.0)
+willy.create_order(blackcoffee, 5.0)
+willy.create_order(whitecoffee, 4.0)
 
 # Test relationships
-print("Alice's coffees:", [c.name for c in alice.coffees()])
-print("Latte orders:", len(latte.orders()))
-print("Latte customers:", [c.name for c in latte.customers()])
-print("Latte avg price:", latte.average_price())
+print("Arthur's coffees:", [c.name for c in arthur.coffees()])
+print("Black Coffee orders:", len(blackcoffee.orders()))
+print("Black Coffee customers:", [c.name for c in blackcoffee.customers()])
+print("Black Coffee avg price:", blackcoffee.average_price())
 
 # Test most aficionado
-aficionado = Customer.most_aficionado(latte)
-print("Biggest latte fan:", aficionado.name if aficionado else "None")
+aficionado = Customer.most_aficionado(blackcoffee)
+print("Biggest black coffee fan:", aficionado.name if aficionado else "None")
